@@ -1,0 +1,104 @@
+{% load static %}
+
+
+<html><head>
+<style>
+     fieldset {
+          background-color: #eeeeee;
+        }
+        
+        legend {
+          background-color: gray;
+          color: white;
+          padding: 5px 10px;
+        }
+        
+        input {
+          margin: 5px;
+        }
+        </style>
+        
+      
+    
+         
+        <!-- Vendor CSS Files -->
+        <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+      
+        <!-- Template Main CSS File -->
+        <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ </head>
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">JETEX</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
+        
+          <li><a class="nav-link scrollto" href="{% url 'professionregister' %}">Register Profession</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'hire' %}">Hire</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'rent' %}">Rent</a></li>
+        </ul>
+    </nav>
+</div>
+</header>
+
+    <body>
+        <fieldset>
+        <div class="design" style="border-radius:5px; border-color: darkgoldenrod; 
+color: black; ">
+        <center>
+<h3><u> Hire Here</u> </h3>
+        </center>
+        <br/><br/>
+<center>
+    <div class="container">
+        <h3>Enter Hire Details</h3>
+        <form action="" method="post">
+            {% csrf_token %}
+
+        <div class="form-group">
+            {{ form.name }}
+        </div>
+        <div class="form-group">
+            {{ form.email }}
+        </div>
+        <div class="form-group">
+            
+            {{ form.service }}
+        </div>
+        <div class="form-group">
+            {{ form.contact_no }}
+        </div>
+        <div class="form-group">
+            Date Needed  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            {{ form.date_needed }}
+        </div>
+        <div class="form-group">
+            {{ form.address }}
+        </div>
+        
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </div>
+        </form>
+    </div>
+    </fieldset>
+    </body>
+</div>
+
+</html>
